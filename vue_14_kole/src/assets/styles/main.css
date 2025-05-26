@@ -1,0 +1,76 @@
+/* 添加以下新样式 */
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  line-height: 1.6;
+}
+
+/* 按钮点击效果 */
+.el-menu-item, .song-card, .singer-card {
+  transition: all 0.3s ease;
+}
+
+.el-menu-item:hover {
+  background-color: rgba(255, 77, 77, 0.1) !important;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff4d4d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff6666;
+}
+
+/* 增强动画效果 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.song-card, .singer-card {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.song-card:nth-child(1) { animation-delay: 0.1s; }
+.song-card:nth-child(2) { animation-delay: 0.2s; }
+.song-card:nth-child(3) { animation-delay: 0.3s; }
+.song-card:nth-child(4) { animation-delay: 0.4s; }
+.singer-card:nth-child(1) { animation-delay: 0.2s; }
+.singer-card:nth-child(2) { animation-delay: 0.3s; }
+.singer-card:nth-child(3) { animation-delay: 0.4s; }
+.singer-card:nth-child(4) { animation-delay: 0.5s; }
+
+/* 增强背景动画 */
+@keyframes bgPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body::before {
+  background: linear-gradient(135deg, #1a1a1a 0%, #330000 50%, #1a1a1a 100%);
+  background-size: 200% 200%;
+  animation: bgPulse 15s ease infinite;
+}
+
+/* 响应式调整 */
+@media (max-width: 576px) {
+  .el-main {
+    padding: 15px;
+  }
+  
+  .section-title {
+    font-size: 1.3rem !important;
+  }
+}
