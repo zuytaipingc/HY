@@ -1,0 +1,118 @@
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* 更新背景渐变动画 */
+body {
+  background: linear-gradient(-45deg, #3a7bd5, #00d2ff, #f857a6, #ff5858);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: #fff;
+  min-height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+    background: linear-gradient(-45deg, #3a7bd5, #00d2ff, #f857a6, #ff5858);
+  }
+  25% {
+    background-position: 50% 50%;
+    background: linear-gradient(-45deg, #00d2ff, #f857a6, #ff5858, #3a7bd5);
+  }
+  50% {
+    background-position: 100% 50%;
+    background: linear-gradient(-45deg, #f857a6, #ff5858, #3a7bd5, #00d2ff);
+  }
+  75% {
+    background-position: 50% 100%;
+    background: linear-gradient(-45deg, #ff5858, #3a7bd5, #00d2ff, #f857a6);
+  }
+  100% {
+    background-position: 0% 50%;
+    background: linear-gradient(-45deg, #3a7bd5, #00d2ff, #f857a6, #ff5858);
+  }
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 更新卡片样式 */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+}
+
+/* 更新按钮样式 */
+.btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* 更新输入框样式 */
+.input-field {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+/* 布局样式 */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
